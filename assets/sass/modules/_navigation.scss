@@ -1,0 +1,137 @@
+.nav {
+
+    &__toggle {
+        outline: none;
+        background: none;
+        height: 100%;
+        padding: 0;
+        border: none;
+        height: 2.5rem;
+        width: 2.5rem;
+        transition: transform 150ms;
+        svg {
+            fill: $color__light;
+        }
+
+        &.active {
+            transform: rotate(45deg);
+        }
+
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: $color__dark;
+
+        z-index: -1;
+        position: fixed;
+        top: 3rem;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        pointer-events: none;
+        transition: transform 150ms;
+        transform: translateY(-100%);
+
+        &.visible {
+            pointer-events: all;
+            transform: translateY(0);
+        }
+
+        a {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .extra {
+            margin: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+    @include breakpoint('desktop') {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        z-index: 1;
+
+        &__toggle {
+            display: none;
+        }
+
+        nav {
+            height: 100%;
+            align-items: flex-end;
+            pointer-events: all;
+            transform: translateY(0);
+            position: relative;
+            top: 0;
+            flex-direction: row;
+
+            .nav__extra-toggle {
+                .minus {
+                    display: none;
+                }
+                &.active {
+                    .plus {
+                        display: none;
+                    }
+                    .minus {
+                        display: initial;
+                    }
+                }
+                svg {
+                    fill: $color__light;
+                    height: 1.4rem;
+                    width: 1.4rem;
+                }
+            }
+
+            .extra {
+                margin: 0;
+                position: absolute;
+                top: 100%;
+                right: 60px;
+                background-color: $color__dark;
+                padding: 1rem;
+                align-items: flex-start;
+                opacity: 0;
+                transition: opacity 100ms;
+                z-index: -1;
+                pointer-events: none;
+
+                a {
+                    font-size: 1rem;
+                    margin-top: 0.5rem;
+                    margin-left: 0;
+                }
+
+                &.visible {
+                    pointer-events: all;
+                    opacity: 1;
+                }
+
+            }
+
+            a {
+                margin-bottom: 0;
+                margin-left: 2rem;
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,26 @@
+.hide-mobile {
+    display: none;
+    
+    @include breakpoint('tablet') {
+        display: initial;
+    }
+}
+
+.hide-tablet-down {
+    display: none;
+    @include breakpoint('desktop') {
+        display: initial;
+    }
+}
+
+.hide-tablet {
+    @include breakpoint('tablet') {
+        display: none;
+    }
+}
+
+.hide-desktop {
+    @include breakpoint('desktop') {
+        display: none;
+    }
+}

@@ -1,0 +1,28 @@
+<div class="nav">
+    <button class="nav__toggle">
+        {% include 'plus' %}
+    </button>
+    {% assign menu = linklists.main-menu %}
+    <nav>
+        {% for link in menu.links %}
+            {% if link.links == blank %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% elsif link.links != blank %}
+                <a href="#" class="nav__extra-toggle hide-tablet-down">
+                    <span class="plus">
+                        {% include 'plus' %}
+                    </span>
+                    <span class="minus">
+                        {% include 'minus' %}
+                    </span>
+                </a>
+                <div class="extra">
+                    {% for child_link in link.links %}  
+                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                    {% endfor %}
+                </div> 
+            {% endif %} 
+        {% endfor %}
+        {% include 'search-form' %}
+    </nav>
+</div>

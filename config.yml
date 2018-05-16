@@ -1,0 +1,6 @@
+development:
+  password: 40b0a85309eea850d537aa931b365fe4
+  theme_id: "12652675190"
+  store: henvibbou.myshopify.com
+  ignores:
+    - .themekit_ignores

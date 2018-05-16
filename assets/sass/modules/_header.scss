@@ -1,0 +1,44 @@
+.site-header {
+    height: 2.5rem;
+    background-color: $color__dark;
+    color: $color__light;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 2px 2px 2px;
+
+    .logo {
+        display: block;
+        height: 100%;
+
+        svg {
+            height: 100%;
+            fill: $color__light;
+        }
+    }
+
+    @include breakpoint('desktop') {
+        height: 3rem;
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background: $color__light;
+            position: absolute;
+            top: 1rem;
+            left: 3rem;
+            transform: rotate(-20deg);
+
+            svg {
+                height: 50%;
+                fill: $color__dark;
+            }
+
+        }
+
+    }
+
+}

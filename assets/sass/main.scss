@@ -1,0 +1,22 @@
+// Vendor
+@import "vendor/reset";
+
+// Utilities
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/helpers";
+
+// Base
+@import "base/general";
+@import "base/styleguide";
+
+// Modules
+@import "modules/header";
+@import "modules/navigation";
+@import "modules/search-form";
+
+// Components
+
+body {
+    background: pink;
+}

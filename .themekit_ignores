@@ -1,0 +1,19 @@
+# $PROJECT_DIR/themekit_ignores
+# plain file names
+config/settings_data.json
+
+node_modules/*
+package.json
+package-lock.json
+webpack.mix.js
+
+assets/sass/*.scss
+assets/js/*.js
+assets/js/*.vue
+.git
+
+# globs
+*.png
+
+# regex
+/\.(txt|gif|bat)$/
