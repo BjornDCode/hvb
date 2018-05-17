@@ -2,15 +2,15 @@
 assets/annie.css:
   development: 2018-05-16T07:42:29-04:00   36f9650a8be46e9b905eb7bcf7bc9f62
 assets/app.js:
-  development: 2018-05-17T05:01:54-04:00   f33bf84a75931562be3d50bb33c7701b
+  development: 2018-05-17T06:26:21-04:00   28d33bfc1d19dc454013cb0a18b51779
 assets/check.svg:
   development: 2018-05-16T09:31:08-04:00   f9b2ff06f86d47af4609735817c5a6bf
 assets/main.css:
-  development: 2018-05-17T04:51:15-04:00   943fa831632cf2a0ddb18345f894285f
+  development: 2018-05-17T08:04:00-04:00   450576e74e21e1cbb350e79c59f22131
 assets/minus.svg:
   development: 2018-05-16T05:08:07-04:00   bddc4129a5a02f43503cf1af513deb91
 assets/mix-manifest.json:
-  development: 2018-05-16T07:53:17-04:00   ebfb3bce41cd7e3ce87b7cddcdfcd711
+  development: 2018-05-16T07:53:17-04:00   fc41c533704ef157270f95fd4bc50b43
 assets/plus.svg:
   development: 2018-05-14T09:32:31-04:00   120f14d2e62ae4bb4fcb698459ba63c2
 config/settings_data.json:
@@ -68,17 +68,17 @@ templates/index.liquid:
 templates/list-collections.liquid:
   development: 2018-05-09T06:54:14-04:00   380da281c4820602d95334029b03aa84
 templates/page.about.liquid:
-  development: 2018-05-17T04:25:11-04:00   376df99b229cf1bf4404062828ac86c6
+  development: 2018-05-17T07:59:12-04:00   e2bdef08a3ecfadca2221e75163e759d
 templates/page.contact.liquid:
-  development: 2018-05-17T04:47:46-04:00   47d1358ac9b12a02cd699415ef9ea84d
+  development: 2018-05-17T07:59:23-04:00   f4866342a6e02fd526e726c561d438ea
 templates/page.henrik.liquid:
-  development: 2018-05-17T04:54:37-04:00   1b6ccdf309c0859a9c2ea3f7ccdd91f2
+  development: 2018-05-17T08:10:08-04:00   739a1b16c58a92ce18c398b085cafead
 templates/page.liquid:
   development: 2018-05-09T06:54:14-04:00   32faec183321b6d7d9b4197ec3e05575
 templates/page.lookbook.liquid:
   development: 2018-05-15T04:20:55-04:00
 templates/page.terms.liquid:
-  development: 2018-05-17T04:51:34-04:00   fa73f986ce7babd39813fb188ce3e6dc
+  development: 2018-05-17T08:04:32-04:00   ea9f24b7a928108965e687d52c5bb9e8
 templates/product.liquid:
   development: 2018-05-09T06:54:14-04:00   d28aa955b34f4dfe8819338f15981de2
 templates/search.liquid:

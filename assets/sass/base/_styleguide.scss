@@ -11,3 +11,66 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+h1 {
+	font-style: italic;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 36px;
+	text-align: right;
+	margin-bottom: 75px;
+	padding-right: 1rem;
+
+	@include breakpoint('desktop') {
+		font-size: 72px;
+		background-color: white; 
+		color: $color__dark;
+	}
+}
+
+h3 {
+    text-align: center;  
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+h4 {
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 10px;
+
+
+	@include breakpoint('desktop') {
+		font-size: 30px;
+		margin-bottom: 30px;
+	}
+
+}
+h5 {
+	font-size: 21px;
+	font-style: italic;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: left;
+	padding-bottom: 10px;
+
+	@include breakpoint('desktop') {
+		font-size: 36px;
+	}
+}
+
+p {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.4;
+	text-transform: initial;
+	color: $color__dark-grey;
+	margin-bottom: 20px;
+
+
+	@include breakpoint('desktop') {
+		font-size: 18px;
+	}
+
+}

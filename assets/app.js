@@ -60,117 +60,11 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-module.exports = __webpack_require__(3);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(9);
-
-// Modules
-__webpack_require__(2);
-__webpack_require__(8);
-__webpack_require__(12);
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-
-(function () {
-
-    var navContainer = document.querySelector('.nav');
-    var navToggle = navContainer.querySelector('.nav__toggle');
-    var navExtraToggle = navContainer.querySelector('.nav__extra-toggle');
-    var nav = navContainer.querySelector('nav');
-    var extraNav = navContainer.querySelector('nav .extra');
-
-    navToggle.addEventListener('click', toggleNav);
-    navExtraToggle.addEventListener('click', toggleExtraNav);
-
-    function toggleNav() {
-        nav.classList.toggle('visible');
-        navToggle.classList.toggle('active');
-    }
-
-    function toggleExtraNav() {
-        extraNav.classList.toggle('visible');
-        navExtraToggle.classList.toggle('active');
-    }
-})();
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Drawer__ = __webpack_require__(11);
-
-
-(function () {
-
-    new __WEBPACK_IMPORTED_MODULE_0__Drawer__["a" /* default */]('sort');
-
-    // Sorting
-    if (location.search.length) {
-        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
-            aKeyValue = aCouples[i].split('=');
-            if (aKeyValue.length > 1) {
-                Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
-            }
-        }
-    }
-
-    var currentlyChecked = document.querySelector('input[value="' + Shopify.queryParams.sort_by + '"]');
-    currentlyChecked.checked = true;
-
-    var radioButtons = document.querySelectorAll('input[name="sort"]');
-    radioButtons.forEach(function (radioButton) {
-        radioButton.addEventListener('click', function (e) {
-            Shopify.queryParams.sort_by = e.target.value;
-            location.search = serialize(Shopify.queryParams);
-        });
-    });
-})();
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-serialize = function serialize(obj) {
-    var str = [];
-    for (var p in obj) {
-        if (obj.hasOwnProperty(p)) {
-            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        }
-    }
-    return str.join("&");
-};
-
-/***/ }),
-/* 10 */,
-/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -259,18 +153,119 @@ var Drawer = function () {
 /* harmony default export */ __webpack_exports__["a"] = (Drawer);
 
 /***/ }),
-/* 12 */
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(2);
+module.exports = __webpack_require__(7);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(3);
+
+// Modules
+__webpack_require__(4);
+__webpack_require__(5);
+__webpack_require__(6);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+serialize = function serialize(obj) {
+    var str = [];
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        }
+    }
+    return str.join("&");
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+
+(function () {
+
+    var navContainer = document.querySelector('.nav');
+    var navToggle = navContainer.querySelector('.nav__toggle');
+    var navExtraToggle = navContainer.querySelector('.nav__extra-toggle');
+    var nav = navContainer.querySelector('nav');
+    var extraNav = navContainer.querySelector('nav .extra');
+
+    navToggle.addEventListener('click', toggleNav);
+    navExtraToggle.addEventListener('click', toggleExtraNav);
+
+    function toggleNav() {
+        nav.classList.toggle('visible');
+        navToggle.classList.toggle('active');
+    }
+
+    function toggleExtraNav() {
+        extraNav.classList.toggle('visible');
+        navExtraToggle.classList.toggle('active');
+    }
+})();
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Drawer__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Drawer__ = __webpack_require__(0);
+
+
+(function () {
+
+    new __WEBPACK_IMPORTED_MODULE_0__Drawer__["a" /* default */]('sort');
+
+    // Sorting
+    if (location.search.length) {
+        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+            aKeyValue = aCouples[i].split('=');
+            if (aKeyValue.length > 1) {
+                Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+            }
+        }
+    }
+
+    var currentlyChecked = document.querySelector('input[value="' + Shopify.queryParams.sort_by + '"]');
+    currentlyChecked.checked = true;
+
+    var radioButtons = document.querySelectorAll('input[name="sort"]');
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener('click', function (e) {
+            Shopify.queryParams.sort_by = e.target.value;
+            location.search = serialize(Shopify.queryParams);
+        });
+    });
+})();
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Drawer__ = __webpack_require__(0);
 
 
 (function () {
 
     new __WEBPACK_IMPORTED_MODULE_0__Drawer__["a" /* default */]('filter');
 })();
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

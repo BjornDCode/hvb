@@ -1,0 +1,75 @@
+
+.page {
+	font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+	.main-content {
+		margin-bottom: 70px;
+	}
+
+
+	.featured-image{
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-bottom: 45px;
+	    display: block;
+	}
+
+	.info-list {
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}
+
+	.dotted-list {
+		list-style-type: initial;
+	}
+
+
+	.store {
+		margin-bottom: 40px;
+	}
+
+
+	.contact-option {
+		margin-bottom: 40px;
+
+		a {
+			display: block;
+			margin-bottom: 5px;
+		}
+	}
+
+
+	@include breakpoint('desktop') {
+		background-color: $color__dark;
+		color: $color__light;
+		padding-bottom: 30px;
+		font-size: 18px;
+
+		p {
+			color: $color__light;
+		}
+
+
+		.main-content {
+			display: flex;
+			flex-direction: row-reverse;
+			align-items: flex-start;
+		}
+
+
+		.featured-image {
+			max-width: 40%;
+			margin-left: 60px;
+			margin-bottom: 0;
+		}
+
+		.stores {
+			display: flex;
+		}
+
+
+	}
+
+}
