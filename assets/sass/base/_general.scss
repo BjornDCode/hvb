@@ -1,3 +1,17 @@
 html, body {
     font-size: 16px;
 }
+
+body {
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+.container {
+    padding: 0 1rem;
+}
+
+img {
+    max-width: 100%;
+}

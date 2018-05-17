@@ -1,0 +1,130 @@
+.collection {
+    font-family: $font__header; // TODO: This should be removed
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        position: relative;
+
+        button {
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            font-style: italic;
+            background: none;
+            border: none;
+        }
+    }
+
+    &__sort, &__filter {
+        position: fixed;
+        background: $color__light;
+        top: 77px;  
+        left: 0;
+        right: 0;
+        height: calc(100vh - 77px);
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid $color__dark;
+        color: $color__light;
+
+        transition: transform 150ms;
+
+        &.visible {
+            transform: translateX(0);
+        }
+
+        .inner-container {
+            width: 80%;
+            background-color: $color__dark;
+            flex: 1;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            font-style: normal;
+            font-weight: bold;
+            padding: 0.5rem 0;
+        }
+    }
+
+    &__filter {
+        transform: translateX(-100%);
+    }
+
+    &__sort {
+        transform: translateX(100%);
+        
+        .inner-container {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        form {
+            > div {
+                margin-bottom: 0.5rem;
+            }
+
+            label {
+                font-size: 1.5rem;
+                font-weight: 300;
+                font-style: italic;
+
+                &:after {
+                    content: '';
+                    display: none;
+                    margin-left: 1rem;
+                    height: 20px;
+                    width: 20px;
+                    background-image: url('check.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+            }
+
+            input {
+                display: none;
+            }
+
+            input:checked + label {
+                text-decoration: underline;
+                &:after {
+                    display: inline-block;
+                }
+            }
+
+        }
+    }
+
+    &__products {
+        padding: 0 2rem;
+    }
+
+    .collection-product {
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+
+        &__image {
+            display: block;
+            margin-bottom: 1rem; 
+        }
+
+        &__brand {
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        &__title {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        &__price {
+            font-size: 0.875rem;
+            font-style: italic;
+        }
+
+    }
+}

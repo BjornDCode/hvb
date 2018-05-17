@@ -75,7 +75,12 @@ module.exports = __webpack_require__(3);
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(9);
+
+// Modules
 __webpack_require__(2);
+__webpack_require__(8);
+__webpack_require__(12);
 
 /***/ }),
 /* 2 */
@@ -109,6 +114,163 @@ __webpack_require__(2);
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Drawer__ = __webpack_require__(11);
+
+
+(function () {
+
+    new __WEBPACK_IMPORTED_MODULE_0__Drawer__["a" /* default */]('sort');
+
+    // Sorting
+    if (location.search.length) {
+        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+            aKeyValue = aCouples[i].split('=');
+            if (aKeyValue.length > 1) {
+                Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+            }
+        }
+    }
+
+    var currentlyChecked = document.querySelector('input[value="' + Shopify.queryParams.sort_by + '"]');
+    currentlyChecked.checked = true;
+
+    var radioButtons = document.querySelectorAll('input[name="sort"]');
+    radioButtons.forEach(function (radioButton) {
+        radioButton.addEventListener('click', function (e) {
+            Shopify.queryParams.sort_by = e.target.value;
+            location.search = serialize(Shopify.queryParams);
+        });
+    });
+})();
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+serialize = function serialize(obj) {
+    var str = [];
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+        }
+    }
+    return str.join("&");
+};
+
+/***/ }),
+/* 10 */,
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Drawer = function () {
+    function Drawer(className) {
+        _classCallCheck(this, Drawer);
+
+        this.className = className;
+
+        this.container = document.querySelector('.collection__' + this.className);
+
+        if (this.container) {
+            this.bindNodes();
+            this.bindEventListeners();
+            this.initSwiping();
+        }
+    }
+
+    _createClass(Drawer, [{
+        key: 'bindNodes',
+        value: function bindNodes() {
+            this.body = document.querySelector('body');
+            this.toggleButton = document.querySelector('.' + this.className + '__toggle');
+            this.closeButton = document.querySelector('.' + this.className + '__close');
+        }
+    }, {
+        key: 'bindEventListeners',
+        value: function bindEventListeners() {
+            this.toggleButton.addEventListener('click', this.toggleSorting.bind(this));
+            this.closeButton.addEventListener('click', this.toggleSorting.bind(this));
+            this.container.addEventListener('click', this.handleSortingContainerClick.bind(this));
+        }
+    }, {
+        key: 'toggleSorting',
+        value: function toggleSorting(e) {
+            this.body.classList.toggle('no-scroll');
+            this.container.classList.toggle('visible');
+        }
+    }, {
+        key: 'handleSortingContainerClick',
+        value: function handleSortingContainerClick(e) {
+            if (e.currentTarget === e.target) {
+                this.toggleSorting();
+            }
+        }
+    }, {
+        key: 'initSwiping',
+        value: function initSwiping() {
+            this.touchstartX = 0;
+            this.touchendX = 0;
+
+            this.swipeZone = this.container.querySelector('.inner-container');
+
+            this.bindSwipeEvents();
+        }
+    }, {
+        key: 'bindSwipeEvents',
+        value: function bindSwipeEvents() {
+            var _this = this;
+
+            this.swipeZone.addEventListener('touchstart', function (e) {
+                _this.touchstartX = e.touches[0].clientX;
+            }, false);
+
+            this.swipeZone.addEventListener('touchend', function (e) {
+                _this.touchendX = e.changedTouches[0].clientX;
+                _this.handleSwipe();
+            }, false);
+        }
+    }, {
+        key: 'handleSwipe',
+        value: function handleSwipe() {
+            if (this.touchendX > this.touchstartX) {
+                this.toggleSorting();
+            }
+        }
+    }]);
+
+    return Drawer;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Drawer);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Drawer__ = __webpack_require__(11);
+
+
+(function () {
+
+    new __WEBPACK_IMPORTED_MODULE_0__Drawer__["a" /* default */]('filter');
+})();
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,73 @@
+<div class="collection container">
+
+    <div class="collection__actions">
+        <button class="filter__toggle">Filter</button>
+        <button class="sort__toggle">Sort</button>
+        <div class="collection__sort">
+            <form class="inner-container">
+                <div>
+                    <input id="manual" name="sort" type="radio" value="manual" checked>
+                    <label for="manual">Featured</label>
+                </div>
+                <div>
+                    <input id="price-ascending" name="sort" type="radio" value="price-ascending">
+                    <label for="price-ascending">Price: Low to High</label>
+                </div>
+                <div>
+                    <input id="price-descending" name="sort" type="radio" value="price-descending">
+                    <label for="price-descending">Price: High to Low</label>
+                </div>
+                <div>
+                    <input id="title-ascending" name="sort" type="radio" value="title-ascending">
+                    <label for="title-ascending">A-Z</label>
+                </div>
+                <div>
+                    <input id="title-descending" name="sort" type="radio" value="title-descending">
+                    <label for="title-descending">Z-A</label>
+                </div>
+                <div>
+                    <input id="created-ascending" name="sort" type="radio" value="created-ascending">
+                    <label for="created-ascending">Oldest to Newest</label>
+                </div>
+                <div>
+                    <input id="created-descending" name="sort" type="radio" value="created-descending">
+                    <label for="created-descending">Newest to Oldest</label>
+                </div>
+                <div>
+                    <input id="best-selling" name="sort" type="radio" value="best-selling">
+                    <label for="best-selling">Best Selling</label>
+                </div>
+            </form>
+            <button class="sort__close">View Items</button>
+        </div>
+        <div class="collection__filter">
+            <div class="inner-container">
+                <p>Accessories</p>
+            </div>
+            <button class="filter__close"></button>
+        </div>
+    </div>
+
+    <h3>{{ collection.title }}</h3>
+
+    <ul class="collection__products">
+        {% for product in collection.products %}
+            <li class="collection-product">
+                <a href="{{ product.url }}" class="collection-product__image">
+                    <img src="{{ product | img_url: '400x' }}" alt="{{ product.title }}">
+                </a>
+                <div class="collection-product__brand">
+                    {{ product.vendor }}
+                </div>
+                <a href="{{ product.url }}">
+                    <div class="collection-product__title">
+                        {{ product.title }}
+                    </div>
+                </a>
+                <div class="collection-product__price">
+                    {{ product.price | money }}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
