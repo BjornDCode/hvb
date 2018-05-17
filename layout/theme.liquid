@@ -22,7 +22,15 @@
       {{ 'main.css' | asset_url | stylesheet_tag }} 
 
       <!-- Header hook for plugins ================================================== -->
-      {{ content_for_header }}
+      {{ content_for_header }} 
+
+    <script>  
+        window.Shopify = {
+            queryParams: {
+                sort_by: '{{ collection.sort_by | default: collection.default_sort_by | escape }}'
+            }
+        }
+    </script>
 
       {% comment %}{{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}{% endcomment %}
 
