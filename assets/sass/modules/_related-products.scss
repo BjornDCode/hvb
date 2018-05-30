@@ -1,0 +1,58 @@
+
+.related-products {
+    max-width: calc(100% - 6rem);
+    margin: 0 auto 60px auto;
+    h4 {
+        text-align: center;
+    }
+    .related-product {
+        display: block;
+        padding: 0 15px 15px 15px;
+        position: relative;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        &__info {
+            position: absolute;
+            background-color: $color__dark;
+            color: $color__light;
+            text-transform: uppercase;
+            bottom: 0;
+            left: 0;
+            right: 15%;
+        }
+
+        &__brand {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        &__title {
+            font-weight: 600;
+        }
+
+        &__price {
+            font-weight: 300;
+            font-size: 14px;
+            font-style: italic;
+        }
+    }
+
+    @include breakpoint('desktop') {
+        .related-products-slider {
+            display: flex;
+
+            .related-product {
+                display: none;
+                
+                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+

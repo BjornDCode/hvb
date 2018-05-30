@@ -1,6 +1,10 @@
 .collection {
     font-family: $font__header; // TODO: This should be removed
 
+    h1 {
+        text-align: center;
+    }
+
     &__actions {
         display: flex;
         justify-content: space-between;
@@ -22,6 +26,7 @@
         top: 77px;  
         left: 0;
         right: 0;
+        z-index: 10;
         height: calc(100vh - 77px);
         display: flex;
         flex-direction: column;
@@ -51,6 +56,57 @@
 
     &__filter {
         transform: translateX(-100%);
+
+        .gf-refine-toggle-mobile {
+            display: none !important;
+        }
+
+        .gf-filter-contents {
+            display: block !important;
+        }
+
+        .gf-option-block {
+            margin-top: 0 !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .gf-block-title {
+            h3 {
+                background: none !important;
+                text-align: left;
+                font-size: 1.5rem !important;
+                font-weight: 300 !important;
+                font-style: italic;
+                padding: 0 !important;
+
+            }
+
+            .js-status-icon {
+                display: none;
+            }
+        }
+
+        .gf-block-content {
+        }
+
+        .gf-option-box {
+            li {
+                a {
+                    color: $color__light !important;
+                    font-size: 14px !important;
+                    text-transform: uppercase !important;
+                    font-weight: 300 !important;
+                    padding-left: 20px !important;
+
+                    &.checked {
+                        font-weight: 300 !important;
+                        text-decoration: underline !important;
+                    }
+                }
+            }
+
+        }
+
     }
 
     &__sort {
@@ -98,10 +154,6 @@
         }
     }
 
-    &__products {
-        padding: 0 2rem;
-    }
-
     .collection-product {
         margin-bottom: 3rem;
         text-transform: uppercase;
@@ -109,6 +161,14 @@
         &__image {
             display: block;
             margin-bottom: 1rem; 
+
+            img:last-of-type {
+                display: none;
+            }
+        }
+
+        &__sizes {
+            display: none;
         }
 
         &__brand {
@@ -125,6 +185,108 @@
             font-size: 0.875rem;
             font-style: italic;
         }
+    }
+
+    @include breakpoint('desktop') {
+
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 50px;
+
+            .container {
+                margin: 0;
+            }
+
+        }
+
+        h1 {
+            text-align: right;
+            margin: 0;
+        }
+
+        &__actions {
+            flex-direction: column;
+            margin: 0;
+            margin-right: 20px;
+
+            > button {
+                text-align: left;
+            }
+        }
+
+        &__sort, &__filter {
+            left: 65%;
+            top: 150px;  
+            height: 70vh;
+
+            .inner-container {
+                width: 100%;
+            }
+        }
+
+        &__filter{
+            transform: translateX(100%);
+
+            #gf-tree {
+                width: 100% !important;
+            }
+        }
+
+        &__products {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                width: 33.33%;
+                box-sizing: border-box;
+                padding: 0 2rem;
+            }
+
+        }
+
+        .gf-block-content {
+            .selected-item {
+                a {
+                    color: $color__light !important;
+                }
+            }
+        }
+
+        .collection-product {
+            &__image {
+                position: relative;
+
+                &:hover {
+
+                    .collection-product__sizes {
+                        display: block;
+                    }
+
+                    img:first-of-type {
+                        display: none;
+                    }
+                    img:last-of-type{
+                        display: block;
+                    }
+                }
+            }
+
+            &__sizes {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: $color__dark;
+                text-align: right;
+
+                span {
+                    display: block;
+                }
+            }
+        }
 
     }
+
 }

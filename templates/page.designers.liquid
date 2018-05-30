@@ -1,0 +1,22 @@
+{% assign groups = linklists['designers'] %}
+
+<div class="page designers">
+    <h1>{{ page.title }}</h1>
+    <div class="designers__search container">
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="container">
+        {% for group in groups.links %}
+            {% if group.links != blank %}
+                <div class="group">
+                    <span>{{ group.title }}</span>
+                    <div class="links">
+                        {% for designer in group.links %}  
+                            <a href="{{ designer.url }}" data-value="{{ designer.title }}">{{ designer.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="related-products-slider">
+    {% for product in collections[section.settings.arrivals].products %}
+        {% comment %}{{ product.title }}{% endcomment %}
+        {% include 'product-card-black' %}
+    {% endfor %}
+</div>
+
+{% schema %}
+    {
+        "name": "New Arrivals",
+        "settings": [
+            {
+                "type": "collection",
+                "id": "arrivals",
+                "label": "Collection"
+            }
+        ]
+    }
+{% endschema %}

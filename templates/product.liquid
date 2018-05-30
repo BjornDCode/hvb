@@ -1,0 +1,72 @@
+<div class="product">
+    <div class="container narrow">
+        <div class="product__images">
+            <div class="product-slider">
+                {% for image in product.images %}
+                    <img src="{{ image | img_url: '500x' }}" alt="">
+                {% endfor %}
+            </div>
+            <div class="product-slider__pagination">
+                {% for image in product.images %}
+                    <span></span>
+                {% endfor %}
+            </div>
+            <div class="product-slider__navigation">
+                <button class="prev">
+                    {% include 'arrow-icon' %}
+                </button>
+                <button class="next">
+                    {% include 'arrow-icon' %}
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product__container">
+        <div class="container narrow">
+            <header class="product__header">
+                <h1>{{ product.title }}</h1>
+                <span class="product__price product__price--mobile">{{ product.price | money }}</span>
+            </header>
+        </div>
+
+        <div class="container narrow">
+            <main class="product__content">
+                <div class="group">
+                    <h6>Brand</h6>
+                    <p>{{ product.vendor }}</p>
+                </div>
+                <div class="group">
+                    <h6>Description</h6>
+                    {{ product.description }}
+                </div>
+            </main>
+        </div>
+
+        <form class="product__actions" method="post" action="/cart/add">
+            <div class="variants container narrow">
+                <h6>Size</h6>
+                <div>
+                    {% for variant in product.variants %}
+                        <label>
+                            <input type="radio" name="id" value="{{ variant.id }}" {% if variant.id == product.first_available_variant.id %} checked {% endif %}>
+                            <span>{{ variant.title }}</span>
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="container narrow">
+                <a href="#" class="size-chart">Size Chart</a>
+            </div>
+            
+            <span class="product__price product__price--desktop">{{ product.price | money }}</span>
+            <button type="submit" name="add">Add to cart</button>
+        </form>
+    </div>
+
+</div>
+<div class="related-products">
+    <h4>Related Products</h4>
+    {% include 'related-products' %}
+</div>

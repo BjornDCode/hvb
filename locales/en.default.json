@@ -296,5 +296,28 @@
   },
   "date_formats": {
     "month_day_year": "%B %d, %Y"
+  },
+  "globo_filter": {
+    "generate": {
+      "clear_all": "Clear All",
+      "clear": "Clear",
+      "sold_out": "Sold Out",
+      "add_to_cart": "Add to cart"
+    },
+    "sorting": {
+      "filter_by": "Filter By",
+      "sort_by": "Sort By",
+      "az": "Alphabetically, A-Z",
+      "za": "Alphabetically, Z-A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "date_descending": "Date, new to old",
+      "date_ascending": "Date, old to new",
+      "sale_percent": "% Sale off"
+    },
+    "stock": {
+      "in_stock": "In Stock",
+      "out_of_stock": "Out of Stock"
+    }
   }
 }

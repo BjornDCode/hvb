@@ -1,0 +1,11 @@
+.seperator {
+    span {
+        display: block;
+        height: 30px;
+        background: $color__light;
+
+        &:nth-child(2n + 1) {
+            background: $color__dark;
+        }
+    }
+}

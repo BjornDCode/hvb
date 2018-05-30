@@ -1,0 +1,48 @@
+.cart {
+
+    &__info {
+        font-family: $font__body;
+    }
+
+    &__subtotal, &__total {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .price {
+            font-weight: bold;
+        }
+    }
+
+    &__submit {
+        border: none;
+        background: $color__dark;
+        color: $color__light;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px 30px;
+    }
+    
+    @include breakpoint('desktop') {
+        background: $color__dark;
+        padding-bottom: 50px;
+
+        &__items {
+            margin-bottom: 50px;
+        }
+
+        &__info {
+            max-width: 400px;
+        }
+
+        &__subtotal, &__total {
+            color: $color__light;
+        }
+
+        &__submit {
+            background-color: $color__light;
+            color: $color__dark;
+            cursor: pointer;
+        }
+    }
+}

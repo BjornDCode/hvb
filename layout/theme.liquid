@@ -22,7 +22,8 @@
       {{ 'main.css' | asset_url | stylesheet_tag }} 
 
       <!-- Header hook for plugins ================================================== -->
-      {{ content_for_header }} 
+      {{ content_for_header }}
+{% include 'globo.filter.script' %} 
 
     <script>  
         window.Shopify = {
@@ -33,13 +34,14 @@
     </script>
 
       {% comment %}{{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}{% endcomment %}
-
     </head>
-    <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
+    <body id="{{ page_title | handle }}" class="gf-left swatch-round template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
         {% include 'header' %}
 
         {{ content_for_layout }}
+
+        {% include 'footer' %}
 
         <script src="{{ 'app.js' | asset_url }}"></script>
     </body>

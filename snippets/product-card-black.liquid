@@ -1,0 +1,16 @@
+<a href="{{ product.url }}" class="related-product">
+    <img src="{{ product.images[1] | img_url: '500x' }}" alt="{{ product.title }}">
+
+    <div class="related-product__info">
+        <div class="related-product__brand">
+            {{ product.vendor }}
+        </div>
+        <div class="related-product__title">
+            {{ product.title }}
+        </div>
+        <div class="related-product__price">
+            {{ product.price | money }}
+        </div>
+    </div>
+</a>
+

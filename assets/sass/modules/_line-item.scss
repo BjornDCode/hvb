@@ -1,0 +1,114 @@
+.line-item {
+    display: flex;
+    font-family: $font__body;
+    margin-bottom: 40px;
+
+    &__image {
+        width: 25%;
+    }
+
+    &__content {
+        flex: 1;
+        margin-left: 20px;
+    }
+
+    &__info {
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    &__options {
+        font-size: 14px;
+        line-height: 1.2;
+        span {
+            text-transform: uppercase;
+        }
+    }
+
+    &__single-price, &__remove {
+        font-size: 14px;
+        font-style: italic;
+        line-height: 1.2;
+    }
+
+    &__single-price {
+        margin-bottom: 10px;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__quantity {
+        display: flex;
+        align-items: center;
+        input {
+            font-size: 20px;
+            width: 25px;
+            text-align: center;
+            background: none;
+            border: none;
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            &::-webkit-inner-spin-button, 
+            &::-webkit-outer-spin-button { 
+                -webkit-appearance: none;
+            }
+        }
+        button {
+            font-size: 20px;
+            background: none;
+            border: none;
+        }
+    }
+
+    &__total-price {
+        font-style: italic;
+    }
+
+    @include breakpoint('desktop') {
+        margin: 0;
+        color: $color__light;
+
+        &__image {
+            width: 150px;
+            padding: 20px 0;
+            background-color: $color__light;
+        }
+
+        &__content {
+            display: flex;
+            align-items: center;
+        }
+
+        &__info, &__actions {
+            flex: 1;
+        }
+
+        &__quantity {
+            button, input {
+                color: $color__light;
+                font-size: 36px;
+            }
+            input {
+                width: 50px;
+            }
+            button {
+                cursor: pointer;
+            }
+        }
+         
+        &__total-price {
+            font-size: 24px;
+        }
+
+    }
+
+}

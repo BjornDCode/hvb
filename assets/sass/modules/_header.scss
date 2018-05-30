@@ -5,6 +5,10 @@
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 2px 2px 2px;
+    position: relative;
+    z-index: 2;
+    position: sticky;
+    top: 0;
 
     .logo {
         display: block;
@@ -18,23 +22,16 @@
 
     @include breakpoint('desktop') {
         height: 3rem;
+        width: 100%;
 
         .logo {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 6rem;
-            height: 6rem;
-            border-radius: 50%;
-            background: $color__light;
-            position: absolute;
-            top: 1rem;
-            left: 3rem;
-            transform: rotate(-20deg);
+            height: 100%;
 
             svg {
-                height: 50%;
-                fill: $color__dark;
+                height: 100%;
             }
 
         }

@@ -15,10 +15,11 @@ import Drawer from './Drawer';
             }
         }
 
-        
-
         let currentlyChecked = document.querySelector('input[value="' + Shopify.queryParams.sort_by + '"]');
-        currentlyChecked.checked = true;
+
+        if (currentlyChecked) {
+            currentlyChecked.checked = true;
+        }
 
         const radioButtons = document.querySelectorAll('input[name="sort"]');
         radioButtons.forEach(radioButton => {

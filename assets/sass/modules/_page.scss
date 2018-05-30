@@ -46,18 +46,15 @@
 		color: $color__light;
 		padding-bottom: 30px;
 		font-size: 18px;
-
 		p {
 			color: $color__light;
 		}
-
 
 		.main-content {
 			display: flex;
 			flex-direction: row-reverse;
 			align-items: flex-start;
 		}
-
 
 		.featured-image {
 			max-width: 40%;

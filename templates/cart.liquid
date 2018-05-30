@@ -1,0 +1,51 @@
+<div class="cart">
+    <h1>Cart ({{ cart.item_count }})</h1>
+    {% if cart.item_count == 0 %}
+        {% comment %}Show no products message here{% endcomment %}
+    {% else %}
+        <form method="post" action="/cart" class="container">
+            <div class="cart__items">
+                {% for item in cart.items %}
+                    <div class="line-item">
+                        <div class="line-item__image">
+                            <img src="{{ item.image | img_url: '150x' }}" alt="{{ item.title }}">
+                        </div>
+                        <div class="line-item__content">
+                            <div class="line-item__info">
+                                <a href="{{ item.product.url }}" class="line-item__title">
+                                    {{ item.product.title }}
+                                </a>
+                                <div class="line-item__options">
+                                    Size: <span>{{ item.variant.option1  }}</span>
+                                </div>
+                                <div class="line-item__single-price">
+                                    {{ item.price | money }}
+                                </div>
+                                <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="line-item__remove">Remove</a>
+                            </div>
+                            <div class="line-item__actions">
+                                <div class="line-item__quantity">
+                                    <button class="decrement">-</button>
+                                    <input type="number" name="updates[]" size="4" id="updates_{{ item.id }}" value="{{ item.quantity }}" />
+                                    <button class="increment">+</button>
+                                </div>
+                                <div class="line-item__total-price">
+                                    {{ item.line_price | money }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="cart__info">
+                <div class="cart__subtotal">
+                    <span>Subtotal</span> <span class="price">{{ cart.original_total_price | money }}</span>
+                </div>
+                <div class="cart__total">
+                    <span>Total</span> <span class="price">{{ cart.total_price | money }}</span>
+                </div>
+                <input type="submit" name="checkout" value="Checkout" class="cart__submit" />
+            </div>
+        </form>
+    {% endif %}
+</div>

@@ -14,5 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "laravel-mix": "^2.1.11"
+  },
+  "dependencies": {
+    "siema": "^1.5.1"
   }
 }

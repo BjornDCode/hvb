@@ -1,0 +1,25 @@
+<li class="collection-product">
+    <a href="{{ product.url }}" class="collection-product__image">
+        <img src="{{ product | img_url: '400x' }}" alt="{{ product.title }}">
+        <img src="{{ product.images[1] | img_url: '400x' }}" alt="{{ product.title }}">
+
+        <div class="collection-product__sizes">
+            {% for option in product.options_with_values %}
+                {% for value in option.values %}
+                    <span>{{ value }}</span>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </a>
+    <div class="collection-product__brand">
+        {{ product.vendor }} 
+    </div>
+    <a href="{{ product.url }}">
+        <div class="collection-product__title">
+            {{ product.title }}
+        </div>
+    </a>
+    <div class="collection-product__price">
+        {{ product.price | money }}
+    </div>
+</li>

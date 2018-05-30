@@ -1,0 +1,219 @@
+.site-footer {
+    color: $color__light;
+    text-transform: uppercase;
+
+    .cart-preview {
+        font-family: $font__body;
+
+        &.open {
+            .cart-preview__toggle {
+                color: $color__light;
+            }
+
+            .cart-preview__container {
+                display: block;
+            }
+        }
+
+        &__toggle {
+            position: fixed;
+            bottom: 22px;
+            left: 0;
+            font-size: 24px;
+            font-style: italic;
+            text-transform: uppercase;
+            background: none;
+            border: none;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        &__container {
+            display: none;
+            background: $color__dark;    
+            position: fixed;
+            bottom: 22px;
+            width: 100%;
+            padding: 20px 20px 5px 20px;
+            box-sizing: border-box;
+        }
+
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+
+            .smiley {
+                display: none;
+            }
+
+            img {
+                width: 70px;
+                margin-left: 20px;
+            }
+
+            .title {
+
+            }
+
+            .option, .price, .remove {
+                font-size: 14px;
+            }
+
+            .price, .remove {
+                font-style: italic;
+            }
+
+            .price {
+                margin-bottom: 10px;
+            }
+
+        }
+
+        &__actions {
+            text-align: right;
+
+            a {
+                display: inline-flex;
+                align-items: center;
+                height: 40px;
+                padding: 0 10px;
+                background: $color__light;
+                color: $color__dark;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        &__subtotal {
+            margin-bottom: 20px;
+            span {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &__social {
+        display: flex; 
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        background: $color__dark;
+        position: fixed;
+        bottom: 0;
+
+        a {
+            font-size: 12px;
+        }
+    }
+
+    &__nav {
+        background: $color__dark;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        padding-bottom: 60px;
+
+        a {
+            width: 50%;
+            text-align: right;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @include breakpoint('desktop') {
+
+        .cart-preview {
+            &__container {
+                max-width: 50%;
+                justify-content: space-between;
+            }
+
+            &__item {
+                margin-bottom: 0;
+                &:last-of-type {
+                    .smiley {
+                        .stripes {
+                            display: none;
+                        }
+                        .end {
+                            display: flex;
+                        }
+                    }
+                }
+                .smiley {
+                    display: flex;
+                    justify-content: center;
+                    width: 30%;
+
+                    .stripes, .end {
+                        span {
+                            display: block;
+                            width: 10px;
+                            height: 100%;
+                            background: $color__light;
+
+                            &:first-of-type {
+                                margin-right: 40px;
+                            }
+                        }
+                    }
+
+                    .stripes {
+                        display: flex;
+                    }
+
+                    .end {
+                        display: none;
+                        flex-direction: column;
+
+                        > div {
+                            display: flex;
+                            justify-content: center;
+                            flex: 1;
+                        }
+                    }
+                }
+                .content {
+                    flex: 1;
+                    margin-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+
+            &__subtotal {
+                margin-top: 20px;
+            }
+        }
+
+        &__social {
+            max-width: 50%;
+            padding: 5px 50px;
+
+            &:after {
+                content: '';
+                display: block;
+                height: 22px;
+                width: 50vw;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                background: $color__dark;
+            }
+        }
+
+        &__nav {
+            max-width: 50%;
+            margin-left: auto;
+        }
+    }
+
+}

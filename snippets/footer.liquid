@@ -1,0 +1,66 @@
+<footer class="site-footer">
+    <div class="site-footer__cart cart-preview">
+        <button class="cart-preview__toggle">Cart ({{ cart.item_count }})</button>
+        <div class="cart-preview__container">
+            <form>
+                <div class="cart-preview__items">
+                    {% for item in cart.items %}
+                        <div class="cart-preview__item">
+                            <div class="smiley">
+                                <div class="stripes">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="end">
+                                    <div>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+
+                                    <svg width="155px" height="47px" viewBox="0 0 155 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="Helvetica-Bold, Helvetica" font-size="165" font-weight="bold">
+                                            <g id="Desktop-HD-Copy-18-12" transform="translate(-6.000000, -2101.000000)" fill="#FFFFFF">
+                                                <g id="Group-4" transform="translate(-33.000000, 1645.000000)">
+                                                    <text id="(" transform="translate(99.000000, 482.000000) rotate(-90.000000) translate(-99.000000, -482.000000) ">
+                                                        <tspan x="71.5268555" y="543">(</tspan>
+                                                    </text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="content">    
+                                <div>
+                                    <div class="title">{{ item.product.title }}</div>
+                                    <div class="option">Size: {{ item.variant.option1 }}</div>
+                                    <div class="price">{{ item.price | money }}</div>
+                                    <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="remove">Remove</a>
+                                </div>
+                                <img src="{{ item.image | img_url: '200x' }}" alt="{{ item.product.title }}">
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="cart-preview__actions">
+                    <div class="cart-preview__subtotal">
+                        <span>Subtotal:</span> {{ cart.total_price | money }}
+                    </div>
+                    <a href="/cart">Checkout</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="site-footer__social">
+        {% assign social = linklists.social %}
+        {% for link in social.links %}
+            <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+        {% endfor %}
+    </div>
+    <div class="site-footer__nav">
+        {% assign menu = linklists.footer-menu %}
+        {% for link in menu.links %}
+            <a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
+        {% endfor %}
+    </div>
+</footer>

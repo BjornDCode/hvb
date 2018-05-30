@@ -1,3 +1,84 @@
-<h1>Forside</h1>
+<div class="front-page">
+    <section class="front-page__hero">
+        <div class="collection">SPRING / SUMMER 18 ZzZzZz</div>
+        <div class="title">
+            <div>The great chain of sleepers</div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+            <div><span>The great </span>chain<span> of sleepers</span></div>
+        </div>
+        <a class="cta" href="/collections/ss18-the-great-chain-of-sleepers">
+            <img src="{{ 'shop_now.png' | file_img_url: '800x' }}" alt="The great chain of sleepers">
+        </a>
+        <img class="image image-1" src="{{ 'front_1.jpg' | file_img_url: '500x' }}">
+        <img class="image image-2" src="{{ 'front_2.jpg' | file_img_url: '500x' }}">
+        <img class="image image-3" src="{{ 'front_3.jpg' | file_img_url: '300x' }}">
+    </section>
+    {% include "seperator" %}
+    <section class="front-page__arrivals">
+        <h1>New Arrivals</h1>
+        <div class="related-products">
+            {% section 'new-arrivals' %}
+        </div>
+    </section>
+    <section class="front-page__categories">
+        <a class="category" href="/collections/women">
+            <img src="{{ 'shop_women.jpg' | file_img_url: '500x' }}" alt="All womens products">
+            <span class="text">
+                <span>Shop <br> Women</span>
+                <span>Shop <br> Women</span>
+                <span>Shop <br> Women</span>
+                <span>Shop <br> Women</span>
+            </span>
+        </a>
+        <a class="category" href="/collections/men">
+            <img src="{{ 'shop_men.jpg' | file_img_url: '500x' }}" alt="All mens products">
+            <span class="text">
+                <span>Shop <br> Men</span>
+                <span>Shop <br> Men</span>
+                <span>Shop <br> Men</span>
+                <span>Shop <br> Men</span>
+            </span>
+        </a>
+    </section>
+    <section class="front-page__lookbook">
+        <a href="/pages/lookbook">
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+            <span>Lookbook - Spring/Summer 18</span>
+
+            <h4>The great chain of sleepers</h4>
+
+            <img src="{{ 'front_lookbook_1.jpg' | file_img_url: '450x' }}" class="image image-1" alt="The great chain of sleepers">
+            <img src="{{ 'front_lookbook_2.jpg' | file_img_url: '300x' }}" class="image image-2" alt="The great chain of sleepers">
+        </a>
+    </section>
+    <section class="front-page__newsletter">
+        <h1>Newsletter</h1>
+        <form action="#" method="post">
+            <div class="input">
+                <input type="text" placeholder="FIRST NAME">
+            </div>
+            <div class="input">
+                <input type="text" placeholder="LAST NAME">
+            </div>
+            <div class="input">
+                <input type="email" placeholder="EMAIL">
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+</div>
 
 
